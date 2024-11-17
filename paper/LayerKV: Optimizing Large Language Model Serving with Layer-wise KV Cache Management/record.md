@@ -8,6 +8,16 @@
 
 长文场景下，首token的时延主要来自于prefill的排队时间，作者认为其根本原因是由于有限的GPU KV Cache 块无法满足长文的分配需求
 
+![alt text](https://github.com/kevincheng2/record_doc/blob/main/paper/LayerKV%3A%20Optimizing%20Large%20Language%20Model%20Serving%20with%20Layer-wise%20KV%20Cache%20Management/latency_with_context_lengths.png)
+
+
+
+LayerKV 整体架构：
+
+![alt text](https://github.com/kevincheng2/record_doc/blob/main/paper/LayerKV%3A%20Optimizing%20Large%20Language%20Model%20Serving%20with%20Layer-wise%20KV%20Cache%20Management/LayerKV_Overview.png)
+
+
+
 
 三个贡献：
 
@@ -46,4 +56,9 @@ SLO-aware Scheduler 请求决策过程
 ### 评价
 
 - 首token时延随着上下文长度变化的性能测试
+
+![alt text](https://github.com/kevincheng2/record_doc/blob/main/paper/LayerKV%3A%20Optimizing%20Large%20Language%20Model%20Serving%20with%20Layer-wise%20KV%20Cache%20Management/Performance_length_parallelism.png)
+
 - 通用数据集下，增加请求数量，首token时延的变化
+
+![alt text](https://github.com/kevincheng2/record_doc/blob/main/paper/LayerKV%3A%20Optimizing%20Large%20Language%20Model%20Serving%20with%20Layer-wise%20KV%20Cache%20Management/latency_with_context_lengths.png)
